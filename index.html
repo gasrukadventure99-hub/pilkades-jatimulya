@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surat Suara Digital - Pilkades Jatimulya 2026</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+              800: '#9a3412',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .selected-card {
+      border-color: #ea580c !important;
+      transform: translateY(-4px);
+      box-shadow: 0 16px 25px -5px rgba(234, 88, 12, 0.3), 0 8px 10px -6px rgba(234, 88, 12, 0.2);
+    }
+    .selected-card .check-badge {
+      opacity: 1 !important;
+      transform: scale(1) !important;
+    }
+    .selected-card .action-btn {
+      background-color: #ea580c !important;
+      color: #ffffff !important;
+      border-color: #ea580c !important;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white antialiased">
+
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 py-3.5 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-brand-50 border border-brand-500 flex items-center justify-center text-brand-600 shadow-sm">
+          <i class="fa-solid fa-landmark text-lg"></i>
+        </div>
+        <div>
+          <h1 class="text-base sm:text-lg font-black text-slate-900 leading-tight tracking-tight">
+            PILKADES JATIMULYA DIGITAL
+          </h1>
+          <p class="text-xs text-slate-500 font-medium">
+            Kecamatan Compreng &bull; Kabupaten Subang
+          </p>
+        </div>
+      </div>
+      <div class="hidden sm:flex items-center space-x-2">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 mr-2 animate-pulse"></span>
+          Sistem Online Active
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-6 w-full flex-grow">
+    
+    <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl mb-6 shadow-sm">
+      <div class="flex items-start">
+        <i class="fa-solid fa-circle-info text-amber-600 mt-0.5 mr-3 text-lg shrink-0"></i>
+        <div>
+          <h2 class="text-xs sm:text-sm font-bold text-amber-900 uppercase tracking-wide">
+            Petunjuk Pencoblosan Surat Suara Digital:
+          </h2>
+          <p class="text-xs sm:text-sm text-amber-800 mt-0.5 leading-relaxed">
+            Klik kartu calon Kepala Desa di bawah ini, kemudian tekan tombol <strong>"Lanjutkan Verifikasi Pemilih"</strong> untuk memasukkan data NIK sesuai KTP/KK.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8" id="candidateGrid">
+      
+      <!-- KANDIDAT 01 (AKTIF & BISA DIPILIH) -->
+      <div onclick="selectCandidate(1, 'Drs. H. Ahmad Subagja')" 
+           id="card-1" 
+           class="candidate-card relative bg-white border-2 border-slate-200 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:border-brand-300 shadow-sm flex flex-col justify-between group">
+        
+        <div class="check-badge absolute top-3 right-3 bg-brand-600 text-white rounded-full w-9 h-9 flex items-center justify-center opacity-0 scale-75 transition-all duration-300 z-20 shadow-md">
+          <i class="fa-solid fa-check text-base font-bold"></i>
+        </div>
+
+        <div>
+          <div class="bg-slate-900 text-white font-black text-xl px-4 py-2.5 flex items-center justify-between">
+            <span>01</span>
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Calon Kades</span>
+          </div>
+          <div class="relative w-full h-64 bg-slate-200 overflow-hidden border-b border-slate-100">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=80" 
+                 alt="Foto Drs. H. Ahmad Subagja" 
+                 class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 pointer-events-none">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+            <div class="absolute bottom-2 left-3 right-3 text-white pointer-events-none">
+              <p class="text-[10px] font-bold uppercase tracking-widest text-brand-300">Visi Utama</p>
+              <p class="text-xs font-medium line-clamp-1 italic">Transparansi Anggaran & Pembangunan Desa</p>
+            </div>
+          </div>
+          <div class="p-4 text-center pointer-events-none">
+            <h3 class="font-black text-slate-900 text-lg group-hover:text-brand-600 transition-colors">
+              Drs. H. Ahmad Subagja
+            </h3>
+            <div class="w-10 h-1 bg-brand-500 mx-auto my-2 rounded-full"></div>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Mewujudkan Desa Jatimulya yang Mandiri, Sejahtera, dan Berkelanjutan.
+            </p>
+          </div>
+        </div>
+        <div class="px-4 pb-4">
+          <button type="button" class="action-btn pointer-events-none w-full py-2.5 px-3 text-xs font-bold rounded-xl border border-slate-200 text-slate-700 transition-all">
+            Pilih Nomor 01
+          </button>
+        </div>
+      </div>
+
+      <!-- KANDIDAT 02 (NONAKTIF & DISAMARKAN) -->
+      <div onclick="showDisabledNotice()" 
+           id="card-2" 
+           class="candidate-card relative bg-slate-50 border-2 border-slate-200 rounded-2xl overflow-hidden cursor-not-allowed transition-all duration-300 opacity-60 flex flex-col justify-between">
+        
+        <div>
+          <div class="bg-slate-700 text-slate-300 font-black text-xl px-4 py-2.5 flex items-center justify-between">
+            <span>02</span>
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Calon Kades</span>
+          </div>
+          <div class="relative w-full h-64 bg-slate-200 overflow-hidden border-b border-slate-100 flex items-center justify-center">
+            <div class="text-center p-4">
+              <i class="fa-solid fa-user-secret text-5xl text-slate-400 mb-2"></i>
+              <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Foto Disamarkan</p>
+            </div>
+            <div class="absolute inset-0 bg-slate-900/10 backdrop-blur-md"></div>
+          </div>
+          <div class="p-4 text-center pointer-events-none">
+            <h3 class="font-bold text-slate-500 text-base tracking-widest uppercase">
+              Kandidat 02
+            </h3>
+            <div class="w-10 h-1 bg-slate-300 mx-auto my-2 rounded-full"></div>
+            <p class="text-xs text-slate-400 italic leading-relaxed">
+              Data visi &amp; misi calon nomor urut 02 tidak ditampilkan.
+            </p>
+          </div>
+        </div>
+        <div class="px-4 pb-4">
+          <button type="button" disabled class="w-full py-2.5 px-3 text-xs font-bold rounded-xl border border-slate-200 bg-slate-200 text-slate-400 cursor-not-allowed">
+            Tidak Dapat Dipilih
+          </button>
+        </div>
+      </div>
+
+      <!-- KANDIDAT 03 (NONAKTIF & DISAMARKAN) -->
+      <div onclick="showDisabledNotice()" 
+           id="card-3" 
+           class="candidate-card relative bg-slate-50 border-2 border-slate-200 rounded-2xl overflow-hidden cursor-not-allowed transition-all duration-300 opacity-60 flex flex-col justify-between">
+        
+        <div>
+          <div class="bg-slate-700 text-slate-300 font-black text-xl px-4 py-2.5 flex items-center justify-between">
+            <span>03</span>
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Calon Kades</span>
+          </div>
+          <div class="relative w-full h-64 bg-slate-200 overflow-hidden border-b border-slate-100 flex items-center justify-center">
+            <div class="text-center p-4">
+              <i class="fa-solid fa-user-secret text-5xl text-slate-400 mb-2"></i>
+              <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Foto Disamarkan</p>
+            </div>
+            <div class="absolute inset-0 bg-slate-900/10 backdrop-blur-md"></div>
+          </div>
+          <div class="p-4 text-center pointer-events-none">
+            <h3 class="font-bold text-slate-500 text-base tracking-widest uppercase">
+              Kandidat 03
+            </h3>
+            <div class="w-10 h-1 bg-slate-300 mx-auto my-2 rounded-full"></div>
+            <p class="text-xs text-slate-400 italic leading-relaxed">
+              Data visi &amp; misi calon nomor urut 03 tidak ditampilkan.
+            </p>
+          </div>
+        </div>
+        <div class="px-4 pb-4">
+          <button type="button" disabled class="w-full py-2.5 px-3 text-xs font-bold rounded-xl border border-slate-200 bg-slate-200 text-slate-400 cursor-not-allowed">
+            Tidak Dapat Dipilih
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 text-center mb-8">
+      <p id="selectedStatusText" class="text-sm font-semibold text-slate-600 mb-3">
+        Silakan klik pada foto kandidat Nomor Urut 01 di atas
+      </p>
+      <button id="btnOpenModal" 
+              onclick="openVoterModal()" 
+              disabled 
+              class="w-full sm:w-auto px-10 py-3.5 bg-slate-300 text-slate-500 font-bold rounded-xl cursor-not-allowed transition-all duration-200 inline-flex items-center justify-center space-x-2">
+        <i class="fa-solid fa-vote-yea"></i>
+        <span>Lanjutkan Verifikasi Pemilih</span>
+      </button>
+    </div>
+
+  </main>
+
+  <div id="voterModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl transform transition-all duration-200 max-h-[90vh] overflow-y-auto">
+      
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-id-card text-brand-600 text-xl"></i>
+          <h3 class="font-bold text-slate-900 text-base">Verifikasi Data Pemilih (DPT)</h3>
+        </div>
+        <button onclick="closeVoterModal()" class="text-slate-400 hover:text-slate-600 text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="bg-brand-50 border border-brand-200 rounded-xl p-3.5 mb-4 text-center">
+        <p class="text-xs text-brand-800 font-medium">Kandidat Pilihan Anda:</p>
+        <p class="text-base font-extrabold text-brand-700 mt-0.5" id="modalCandidateName">-</p>
+        <span id="modalCandidateNumber" class="inline-block mt-1 bg-brand-600 text-white font-bold text-[11px] px-2.5 py-0.5 rounded-full">
+          Nomor Urut 00
+        </span>
+      </div>
+
+      <form id="voteForm" onsubmit="handleFormSubmit(event)" class="space-y-3.5">
+        <div>
+          <div class="flex justify-between items-center mb-1">
+            <label class="block text-xs font-bold text-slate-700">NIK (16 Digit Sesuai KTP/KK) <span class="text-red-500">*</span></label>
+            <span id="nikCounter" class="text-[11px] font-semibold text-slate-400">0/16</span>
+          </div>
+          <input type="text" 
+                 id="voterNik" 
+                 maxlength="16" 
+                 required 
+                 oninput="validateNikInput(this)"
+                 placeholder="Masukkan 16 digit angka NIK" 
+                 class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-xl focus:ring-2 focus:ring-brand-500 focus:border-brand-500 focus:outline-none font-mono tracking-wider">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Nama Lengkap Pemilih <span class="text-red-500">*</span></label>
+          <input type="text" 
+                 id="voterName" 
+                 required 
+                 placeholder="Sesuai KTP / KK" 
+                 class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-xl focus:ring-2 focus:ring-brand-500 focus:border-brand-500 focus:outline-none">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">RT / RW (Opsional)</label>
+          <input type="text" 
+                 id="voterRtrw" 
+                 placeholder="Contoh: RT 02 / RW 01" 
+                 class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-xl focus:ring-2 focus:ring-brand-500 focus:border-brand-500 focus:outline-none">
+        </div>
+
+        <div class="flex items-start space-x-2 pt-1">
+          <input type="checkbox" id="declarationCheck" required class="mt-0.5 rounded border-slate-300 text-brand-600 focus:ring-brand-500">
+          <label for="declarationCheck" class="text-[11px] text-slate-600 leading-snug cursor-pointer">
+            Saya menyatakan data di atas adalah milik saya sendiri dan siap dipertanggungjawabkan secara sah.
+          </label>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" 
+                  id="btnSubmitVote" 
+                  class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-lg transition-all flex items-center justify-center space-x-2 text-sm">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Kirim Suara ke Database</span>
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <div id="statusModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 text-center shadow-2xl">
+      <div id="statusIcon" class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl">
+      </div>
+      <h3 id="statusTitle" class="text-lg font-bold text-slate-900 mb-1">Status</h3>
+      <p id="statusMessage" class="text-xs text-slate-600 leading-relaxed mb-5">Pesan status...</p>
+      <button onclick="closeStatusModal()" class="w-full py-2.5 bg-slate-900 text-white font-bold rounded-xl text-xs hover:bg-slate-800 transition-colors">
+        Tutup
+      </button>
+    </div>
+  </div>
+
+  <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500 mt-8">
+    <p>&copy; 2026 Panitia Pemilihan Kepala Desa Jatimulya. Kecamatan Compreng, Kabupaten Subang.</p>
+  </footer>
+
+  <script>
+    // =========================================================================
+    // SALIN URL DEPLOYMENT GOOGLE APPS SCRIPT ANDA DI SINI
+    // =========================================================================
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzlpUNVvUT5f9GgOzqKr_3JfUVK_Zw0XtB1ppEYg24ahCrrVz-wdms_r8Lfdj3sux0d/exec";
+
+    let selectedCandidateId = null;
+    let selectedCandidateName = '';
+
+    function selectCandidate(id, name) {
+      selectedCandidateId = id;
+      selectedCandidateName = name;
+
+      document.querySelectorAll('.candidate-card').forEach(card => {
+        card.classList.remove('selected-card');
+      });
+
+      const selectedCard = document.getElementById(`card-${id}`);
+      selectedCard.classList.add('selected-card');
+
+      const btn = document.getElementById('btnOpenModal');
+      btn.disabled = false;
+      btn.className = "w-full sm:w-auto px-10 py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-lg hover:shadow-brand-500/30 cursor-pointer transition-all duration-200 inline-flex items-center justify-center space-x-2 transform active:scale-95";
+
+      document.getElementById('selectedStatusText').innerHTML = 
+        `Pilihan Anda: <strong class="text-brand-600">Nomor Urut 0${id} - ${name}</strong>`;
+    }
+
+    function showDisabledNotice() {
+      showStatusModal(false, 'Kandidat Tidak Aktif', 'Kandidat ini saat ini disamarkan/nonaktif dan tidak dapat dipilih.');
+    }
+
+    function openVoterModal() {
+      if (!selectedCandidateId) return;
+
+      document.getElementById('modalCandidateName').innerText = selectedCandidateName;
+      document.getElementById('modalCandidateNumber').innerText = `Nomor Urut 0${selectedCandidateId}`;
+      document.getElementById('voterModal').classList.remove('hidden');
+    }
+
+    function closeVoterModal() {
+      document.getElementById('voterModal').classList.add('hidden');
+    }
+
+    function validateNikInput(input) {
+      input.value = input.value.replace(/[^0-9]/g, '');
+      const len = input.value.length;
+      const counter = document.getElementById('nikCounter');
+      
+      counter.innerText = `${len}/16`;
+      if (len === 16) {
+        counter.className = "text-[11px] font-bold text-emerald-600";
+      } else {
+        counter.className = "text-[11px] font-semibold text-slate-400";
+      }
+    }
+
+    function showStatusModal(isSuccess, title, message) {
+      const modal = document.getElementById('statusModal');
+      const iconContainer = document.getElementById('statusIcon');
+      const titleElem = document.getElementById('statusTitle');
+      const msgElem = document.getElementById('statusMessage');
+
+      if (isSuccess) {
+        iconContainer.className = "w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3 text-2xl";
+        iconContainer.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+      } else {
+        iconContainer.className = "w-16 h-16 rounded-full bg-red-100 text-red-600 flex items-center justify-center mx-auto mb-3 text-2xl";
+        iconContainer.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>';
+      }
+
+      titleElem.innerText = title;
+      msgElem.innerText = message;
+      modal.classList.remove('hidden');
+    }
+
+    function closeStatusModal() {
+      document.getElementById('statusModal').classList.add('hidden');
+    }
+
+    async function handleFormSubmit(event) {
+      event.preventDefault();
+
+      if (GOOGLE_SCRIPT_URL.includes("YOUR_DEPLOYED_SCRIPT_ID")) {
+        closeVoterModal();
+        showStatusModal(false, 'Konfigurasi Belum Selesai', 'Variabel GOOGLE_SCRIPT_URL di file index.html belum diganti dengan Web App URL dari Google Apps Script Anda!');
+        return;
+      }
+
+      const nik = document.getElementById('voterNik').value.trim();
+      const nama = document.getElementById('voterName').value.trim();
+      const rtrw = document.getElementById('voterRtrw').value.trim() || '-';
+
+      if (nik.length !== 16) {
+        showStatusModal(false, 'Format NIK Salah', 'NIK harus tepat 16 digit angka sesuai KTP/KK!');
+        return;
+      }
+
+      const submitBtn = document.getElementById('btnSubmitVote');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> <span>Mengirim Suara...</span>';
+
+      const payload = {
+        nik: nik,
+        nama: nama,
+        rtrw: rtrw,
+        candidateId: selectedCandidateId,
+        candidateName: selectedCandidateName
+      };
+
+      try {
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'cors',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        closeVoterModal();
+
+        if (result.status === 'success') {
+          showStatusModal(true, 'Suara Berhasil Dicatat!', result.message);
+          document.getElementById('voteForm').reset();
+          document.getElementById('nikCounter').innerText = "0/16";
+        } else if (result.status === 'duplicate') {
+          showStatusModal(false, 'Gagal Mencoblos', result.message);
+        } else {
+          showStatusModal(false, 'Terjadi Kesalahan', result.message || 'Gagal menyimpan suara.');
+        }
+
+      } catch (error) {
+        closeVoterModal();
+        showStatusModal(false, 'Gangguan Koneksi', 'Tidak dapat terhubung ke Google Sheets. Pastikan URL Script sudah benar dan hak akses disetel ke "Anyone".');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> <span>Kirim Suara ke Database</span>';
+      }
+    }
+  </script>
+
+</body>
+</html>
